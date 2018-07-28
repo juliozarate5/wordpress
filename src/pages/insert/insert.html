@@ -1,0 +1,37 @@
+<!--
+  Generated template for the InsertPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Añadir nueva entrada</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="savePost()" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" floating>Titulo</ion-label>
+        <ion-input formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="form.get('title').errors && form.get('title').touched">
+        <p *ngIf="form.get('title').hasError('required')">Se requiere un titulo</p>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Contenido</ion-label>
+        <ion-textarea formControlName="content"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="form.get('content').errors && form.get('content').touched">
+        <p *ngIf="form.get('content').hasError('required')">Se requiere un contenido</p>
+      </ion-item>
+    </ion-list>
+    <button ion-button block type="submit" [disabled]="!form.valid">Publicar</button>
+  </form>
+</ion-content>

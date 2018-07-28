@@ -1,0 +1,7 @@
+{
+  "name": "imaginamos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
