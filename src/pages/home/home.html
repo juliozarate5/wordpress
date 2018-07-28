@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="navbarColor">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,19 +7,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="container" padding>
     <ion-refresher (ionRefresh)="doRefresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-  <h3>Posts</h3>
+  <h3>Últimos Posts</h3>
   <ion-list>
     <ion-item *ngFor="let post of postList">
       <h2>{{ post.title.rendered}}</h2>
-      <h3>{{post.date }}</h3>
-      <p>
+      <h4>Fecha: {{post.date | date:'medium'}}</h4>
         <button ion-button clear item-right icon-left (click)="showPost(post)">
-          <ion-icon name="arrow-dropright-circle"></ion-icon>Leer</button>
-      </p>
+          <ion-icon name="arrow-dropright-circle"></ion-icon>Leer
+        </button>
     </ion-item>
   </ion-list>
 </ion-content>

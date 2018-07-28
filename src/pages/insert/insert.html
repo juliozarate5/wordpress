@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="navbarColor">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -14,7 +14,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="container" padding>
   <form [formGroup]="form" (ngSubmit)="savePost()" novalidate>
     <ion-list>
       <ion-item>

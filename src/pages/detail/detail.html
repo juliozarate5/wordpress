@@ -4,24 +4,24 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header color="navbarColor">
 
-  <ion-navbar>
+  <ion-navbar color="navbarColor">
     <ion-title>{{post?.title.rendered}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="container" padding>
   <ion-card>
     <ion-card-content>
-      <h3>Fecha: {{post?.date}}</h3>
-      <p>{{post?.content.rendered}}</p>
+      <h3>Fecha: {{post?.date | date:'medium'}}</h3>
+      <p [innerHTML]="post?.content.rendered"></p>
     </ion-card-content>
     <ion-row no-padding>
       <ion-col>
-        <button color="primary" (click)="editPost()">
+        <button ion-button clear small (click)="editPost()" icon-left>
           <ion-icon name="brush"></ion-icon> Editar
         </button>
       </ion-col>

@@ -17,9 +17,8 @@ export class LoginService {
     }
 
     /**
-     * Realizar login sin importar el usuario
+     * Realizar login dependiendo el usuario
      */
-
     logIn(user): any {
         let url = `${this.url}`;
         let userJSON = JSON.stringify(user);

@@ -29,6 +29,9 @@ export class LoginPage {
     }
   }
 
+  /**
+   * realiza la petición al servicio para login
+   */
   login(){
     let user = {username: this.username, password: this.password};
     this.loginService.logIn(user)
